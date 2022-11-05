@@ -1,50 +1,16 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-
-
-//        Matrix b = new Matrix(2, 2);
-//        Matrix c = new Matrix(2,2);
-
-//        for (int i = 0; i < b.matrix.length; i++) {
-//            for (int j = 0; j < b.matrix[0].length; j++) {
-//                System.out.format("%6d ", b.matrix[i][j]);
-//            }
-//            System.out.println();
-//        }
-
-
-//        int[][] result = b.matrixDegree(2);
-
-
-//        for (int i = 0; i < result.length; i++) {
-//            for (int j = 0; j < result[0].length; j++) {
-//                System.out.format("%6d ", result[i][j]);
-//            }
-//        System.out.println();
-//        }
-
-        Vector a = new Vector(1, 2, 3);
-        Vector b = new Vector(2, 5, 6);
-//        System.out.println(a.coordList.toString());
-//        ArrayList<Integer> result = a.vectorOpers(b, '+');
-//        System.out.println(result.toString());
-//        double result = a.vectorScal(b);
-//        double result = a.vectorLength();
-//        ArrayList<Integer> result = a.vectorProd(b);
-//        System.out.println(result.toString());
-//        int[][] result = Vector.vectorGen(5);
-//        for (int i = 0; i < result.length; i++) {
-//            for (int j = 0; j < result[0].length; j++) {
-//                System.out.format("%6d ", result[i][j]);
-//            }
-//        System.out.println();
-//        }
-        double res =a.vectorCos(b);
-        System.out.print(res);
+        Reader[] readers = ReaderList();
+        readers[1].returnBook(new Book[]{new Book("'МуМу'", "Тургенев"), new Book("'Я встретил вас'", "Тютчев")});
+        readers[0].takeBook(new String[] {"Над пропостью", "Бедные люди"});
+        readers[2].returnBook(3);
     }
-
-
-
+    public static Reader[] ReaderList(){
+        int numberOfReaders = 3;
+        Reader[] readers = new Reader[numberOfReaders];
+        readers[0] = new Reader("Пронина П.С.", 12345, "IT", "20.04.2003", 3456);
+        readers[1] = new Reader("Серов А.В.", 18444, "IT", "27.07.2003", 5051);
+        readers[2] = new Reader("Петрова А.С.", 25647, "UM", "12.06.2002", 3674);
+        return readers;
+    }
 }
