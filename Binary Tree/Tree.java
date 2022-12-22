@@ -2,7 +2,7 @@
 
 public class Tree {
     Node rootNode;
-    public Tree() { // Пустое дерево
+    public Tree() { 
         rootNode = null;
     }
 
@@ -80,7 +80,7 @@ public class Tree {
 //                        isRowEmpty = false;
 //                }
 //                else {
-//                    System.out.print("__");//
+//                    System.out.print("__");
 //                    localStack.push(null);
 //                    localStack.push(null);
 //                }
