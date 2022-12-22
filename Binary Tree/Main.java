@@ -1,8 +1,8 @@
 
 public class Main {
     public static void main(String[] args) {
-        Tree tree = new Tree();
-        tree.PutIn_Node(45);
+        Tree tree = new Tree(); // создаю объект класса дерево
+        tree.PutIn_Node(45);// заполняю дерево 
         tree.PutIn_Node(10);
         tree.PutIn_Node(8);
         tree.PutIn_Node(60);
@@ -13,9 +13,9 @@ public class Main {
         tree.PutIn_Node(5);
         tree.PutIn_Node(55);
 
-        Node rootNode = tree.rootNode;
-        System.out.println(rootNode.value);
-        Node findvalue = tree.getNode(4);
+        Node rootNode = tree.rootNode; // создаем объект корневого элемента
+        System.out.println(rootNode.value); //выводим значение корневого элемента
+        Node findvalue = tree.getNode(4);// ключ элемента
         System.out.println(findvalue);
 
     }
