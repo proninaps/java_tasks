@@ -8,11 +8,11 @@ import java.util.LinkedList;
 //        Если буфер заполнен полностью, производитель должен ждать, пока потребитель заберёт данные и место освободится.
 public class Main {
     public static void main(String[] args) {
-        LinkedList<Integer> buffer = new LinkedList<Integer>();
+        LinkedList<Integer> buffer = new LinkedList<Integer>();// создаем список с ссылкой на следующий и предидущий элемент
         int size = 10;
-        Thread Man = new Thread(new Manufacturer(buffer, size));
+        Thread Man = new Thread(new Manufacturer(buffer, size));// создаем два потока
         Thread Man2 = new Thread(new Consumer(buffer, size));
-        Man.start();
+        Man.start();//запускаем 
         Man2.start();
     }
 }
