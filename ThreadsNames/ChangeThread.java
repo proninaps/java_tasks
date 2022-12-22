@@ -1,11 +1,11 @@
 class ChangeThread extends Thread {
-    private Object lock; // определяем ключ потоков
+    private Object lock; //ключ потоков
 
-    public ChangeThread(Object lock) {
+    public ChangeThread(Object lock) {// метод смены потоков
         this.lock = lock;
     }
 
-    public void run() { //расширяем метод run
+    public void run() { //раширяем классический run
         while (true) { //делаем бесконечный цикл
             synchronized (lock) { // синхронизируем потоки
                     System.out.println(getName());// Выводим имя потока
