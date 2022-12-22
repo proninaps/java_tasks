@@ -1,31 +1,31 @@
 //import java.util.Stack;
 
-public class Tree {
+public class Tree { // создаю класс дерева 
     Node rootNode;
     public Tree() {
-        rootNode = null;
+        rootNode = null; // корневой узел принимаю за null
     }
 
-    public void PutIn_Node(int value) {
-        Node newNode = new Node();
-        newNode.set_Value(value);
-        if (this.rootNode == null) {
+    public void PutIn_Node(int value) {// метод добавления новых узлов
+        Node newNode = new Node(); // создаю новый узел
+        newNode.set_Value(value); // передаю значение ключа
+        if (this.rootNode == null) { // если корневого узла нет, то передаю значение нового узла в качестве корневого
             this.rootNode = newNode;
         }
         else {
-            Node someNode = rootNode;
+            Node someNode = rootNode; // создаем новый образный узел и передаю значение корневого узла 
             while (true) {
-                if (value == someNode.value) {
+                if (value == someNode.value) { // если значение равно значению образного узла завершаю цикл
                     return;
-                } else if (value < someNode.value) {
-                    if (someNode.leftChild == null) {
+                } else if (value < someNode.value) { // если значение меньше образного, перехожу в левый узел 
+                    if (someNode.leftChild == null) {// если левого узла не существует, то присваеваю ему значение нового узла и завершаю цикл
                         someNode.leftChild = newNode;
                         return;
                     } else {
-                        someNode = someNode.leftChild;
+                        someNode = someNode.leftChild; // в противном случае присваиваю образному узлу значение левого узла и заного прохожу цикл
                     }
                 } else {
-                    if (someNode.rightChild == null) {
+                    if (someNode.rightChild == null) {// аналогично с правым узлом 
                         someNode.rightChild = newNode;
                         return;
                     } else {
@@ -36,17 +36,17 @@ public class Tree {
 
         }
     }
-    public Node getNode(int value){
-        Node someNode = rootNode;
-        while(value!= someNode.value){
-            if(value<someNode.value){
+    public Node getNode(int value){ // вывод узла по значению 
+        Node someNode = rootNode; // образному присваеую корневой 
+        while(value!= someNode.value){ // пока значение ключа не равно значению ключа образного, прохожу цикл
+            if(value<someNode.value){// если ключ меньше ключа образного присваиваю образному его левого ребенка и прохожу цикл заново пока не найду подходящий ключ 
                 someNode = someNode.leftChild;
-                if(someNode == null){
+                if(someNode == null){ // если ключ не найден, значит такого узла нет
                     System.out.println("Такого числа нет в дереве");
                     return null;
                 }
             }
-            else if(value>someNode.value){
+            else if(value>someNode.value){// аналогично с правым(большим) узлом
                 someNode = someNode.rightChild;
                 if(someNode == null){
                     System.out.println("Такого числа нет в дереве");
@@ -56,7 +56,7 @@ public class Tree {
         }
         return someNode;
     }
-//    public void printTree() {
+//    public void printTree() {  // метод для вывода использовала для проверки
 //        Stack globalStack = new Stack();
 //        globalStack.push(rootNode);
 //        int gaps = 32;
